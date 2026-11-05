@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Study Planner</title><link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script></head>
+<body>
+<header><a class="brand" href="/">◈ Study Planner</a><span class="tagline">A little focus. A lot of progress.</span><button id="logout" hidden>Sign out</button></header>
+<main>
+<p id="notice" role="status" aria-live="polite"></p>
+<section id="auth" class="auth card">
+<p class="eyebrow">YOUR NEXT CHAPTER</p><h1>Make time for<br>what you want to learn.</h1><p>Bring your subjects, deadlines, and daily priorities together.</p>
+<form id="auth-form"><label id="name-label" hidden>Your name<input name="name" maxlength="80" autocomplete="name"></label><label>Email<input name="email" type="email" required maxlength="254" autocomplete="username"></label><label>Password<input name="password" type="password" required minlength="8" maxlength="128" autocomplete="current-password"></label><button class="primary" id="auth-submit">Sign in</button></form>
+<button id="auth-toggle" class="link">New here? Create an account</button><p class="muted">Demo: demo@example.com / StudyDemo!2026</p>
+</section>
+<section id="workspace" hidden>
+<div class="intro"><div><p class="eyebrow">YOUR LEARNING, IN FOCUS</p><h1 id="greeting">Your study space</h1><p>A clear plan for your next step.</p></div><button id="edit-profile">Edit profile</button></div>
+<div class="stats" id="stats"></div>
+<div class="layout"><aside class="card"><div class="section-title"><h2>Subjects</h2><span id="subject-count"></span></div><form id="subject-form"><label class="sr-only" for="subject-name">New subject name</label><input id="subject-name" placeholder="e.g. Mathematics" required maxlength="80"><button class="primary">Add subject</button></form><ul id="subjects"></ul><p class="muted">Rename subjects anytime. Move their tasks before deleting.</p></aside>
+<section><div class="section-title"><div><h2>Your study tasks</h2><p class="muted">Recommended order combines importance and deadline urgency.</p></div><button id="new-task" class="primary">+ New task</button></div>
+<form id="filters" class="card filters"><label>Search<input name="q" placeholder="Find a task…" maxlength="160"></label><label>Subject<select name="subject_id" id="filter-subject"><option value="">All subjects</option></select></label><label>Status<select name="status"><option value="">All statuses</option><option value="pending">Pending</option><option value="in_progress">In progress</option><option value="completed">Completed</option></select></label><label>Priority<select name="priority"><option value="">All priorities</option><option>high</option><option>medium</option><option>low</option></select></label><label>Due by<input name="due_before" type="date"></label><label>Sort<select name="sort"><option value="recommended">Recommended</option><option value="due_date">Due date</option><option value="newest">Newest first</option></select></label><button>Apply filters</button><button type="button" id="clear-filters">Clear</button></form>
+<div id="tasks" aria-live="polite"></div></section></div>
+</section>
+<dialog id="task-dialog"><form id="task-form"><div class="section-title"><h2 id="task-heading">New task</h2><button type="button" id="close-dialog" aria-label="Close task editor">×</button></div><label>Title<input name="title" required maxlength="160"></label><label>Subject<select name="subject_id" id="task-subject" required></select></label><div class="two-col"><label>Due date<input name="due_date" type="date" required></label><label>Estimated minutes<input name="estimated_minutes" type="number" min="1" max="1440" value="30" required></label></div><div class="two-col"><label>Priority<select name="priority"><option value="medium">Medium</option><option value="high">High</option><option value="low">Low</option></select></label><label>Status<select name="status"><option value="pending">Pending</option><option value="in_progress">In progress</option><option value="completed">Completed</option></select></label></div><label>Notes<textarea name="notes" rows="3" maxlength="2000"></textarea></label><p id="task-error" role="alert"></p><button class="primary">Save task</button></form></dialog>
+</main><footer>Personalized Study Planner · Python + Flask + SQLite</footer>
+</body></html>
