@@ -1,0 +1,14 @@
+Personalized Study Planner - local backend verification
+Date: 2026-11-05
+Environment: Windows, Python 3.12, Flask 3.1.3, temporary SQLite databases
+Command: .venv\Scripts\python.exe scripts/run_tests.py
+
+Ran 27 tests in 6.493s
+OK
+
+All 25 backend test methods and both priority-scoring unit tests passed.
+Parameterized subtests cover additional invalid inputs and deadline boundaries.
+JavaScript syntax: node --check "Functional Web Application/study_planner/static/app.js" passed.
+
+These are actual local test results. GitHub CI, browser UI testing, load testing,
+and production deployment have not been verified by this report.

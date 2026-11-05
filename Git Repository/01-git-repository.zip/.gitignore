@@ -1,0 +1,12 @@
+__pycache__/
+.env
+.venv/
+venv/
+instance/
+*.py[cod]
+*.sqlite3
+*.sqlite3-*
+secret.key
+.pytest_cache/
+.coverage
+htmlcov/
